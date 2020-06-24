@@ -1,11 +1,12 @@
 import 'package:url_launcher/url_launcher.dart';
 
 class launching {
-  void call(String number) => launch("tel:$number");
+  Future<void> call(String number) async => await launch("tel:$number");
 
-  void sendSms(String number) => launch("sms:$number");
+  Future<void> sendSms(String number) async => await launch("sms:$number");
 
-  void sendEmail(String email) => launch("mailto:$email");
+  Future<void> sendEmail(String email) async => await launch("mailto:$email");
 
-  void openurl(String source_link) => launch("$source_link");
+  Future<void> openurl(String source_link) async =>
+      await launch("$source_link");
 }

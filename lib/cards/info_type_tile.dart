@@ -1,10 +1,14 @@
+import 'package:covidfyi/Screens/ThirdScreen.dart';
 import 'package:flutter/material.dart';
 
 class info_type_tile extends StatelessWidget {
   final String infotype;
   final IconData iconname;
+  final String NoContacts;
+  final String stateName;
 
-  info_type_tile({this.infotype, this.iconname});
+  info_type_tile(
+      {this.infotype, this.iconname, this.NoContacts, this.stateName});
 
   Widget build(BuildContext context) {
     return ListTile(
@@ -23,15 +27,22 @@ class info_type_tile extends StatelessWidget {
           infotype,
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
+        subtitle: Text(
+          "$NoContacts Contacts",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         trailing: Icon(
           Icons.keyboard_arrow_right,
           color: Colors.white,
           size: 30.0,
         ),
         onTap: () {
-          // Navigator.of(context).push(MaterialPageRoute(
-          // builder: (context) => StateList(stateslist, infotype, context),
-          // ));
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) =>
+                ThirdScreen(stateName: stateName, infotype: infotype),
+          ));
         });
   }
 }

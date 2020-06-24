@@ -47,6 +47,28 @@ const List info_types = [
   "Government Contacts",
   "Helplines",
   "Hospital",
+  "Hospitals",
   "Laboratories",
-  "Quarantine Facilities"
+  "Quarantine Facilities",
+];
+const List info_types1 = [
+  "Central Ministry Hospital",
+  "Dialysis Center",
+  "Doctors",
+  "Fever Clinics",
+  "Government",
+  "Government Contacts",
+  "Govt Hospitals",
+  "Govt Medical College",
+  "Health centre",
+  "Helplines",
+  "Hospital",
+  "Hospitals",
+  "Laboratories",
+  "Private Hospitals",
+  "Private Medical College",
+  "Quarantine Facilities",
+  "Quarantine Facility",
+  "Testing Center",
+  "Treatment Hospital"
 ];

@@ -41,11 +41,13 @@ class state_tile extends StatelessWidget {
         var data = networkHelper.getData();
         print(data);
         Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => SecondScreen(
-                      stateName: stateName,
-                    )));
+          context,
+          MaterialPageRoute(
+            builder: (context) => SecondScreen(
+              stateName: stateName,
+            ),
+          ),
+        );
       },
     );
   }

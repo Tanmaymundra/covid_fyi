@@ -11,7 +11,7 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('States'),
+          title: Text('Covid-FYI'),
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
