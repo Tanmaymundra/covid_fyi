@@ -1,3 +1,6 @@
+import 'package:covidfyi/Screens/SecondScreen.dart';
+import 'package:covidfyi/utilities/Network.dart';
+import 'package:covidfyi/utilities/const_url.dart';
 import 'package:flutter/material.dart';
 
 class state_tile extends StatelessWidget {
@@ -17,13 +20,10 @@ class state_tile extends StatelessWidget {
             ),
           ),
         ),
-        child: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.location_city,
-            color: Colors.white,
-          ),
-          iconSize: 30,
+        child: Icon(
+          Icons.location_city,
+          color: Colors.white,
+          size: 30,
         ),
       ),
       title: Text(
@@ -36,7 +36,16 @@ class state_tile extends StatelessWidget {
         size: 30,
       ),
       onTap: () {
-        //  Navigator.pushNamed(context, )
+        final String url = state_data_api + stateName;
+        NetworkHelper networkHelper = NetworkHelper(url);
+        var data = networkHelper.getData();
+        print(data);
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => SecondScreen(
+                      stateName: stateName,
+                    )));
       },
     );
   }

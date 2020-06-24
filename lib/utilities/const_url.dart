@@ -9,7 +9,6 @@ const List StateList = [
   "Bihar",
   "Chandigarh",
   "Chattisgarh",
-  "Chhattisgarh",
   "Dadra and Nagar Haveli",
   "Daman and Diu",
   "Delhi",
@@ -40,4 +39,14 @@ const List StateList = [
   "Uttar Pradesh",
   "Uttarakhand",
   "West Bengal"
+];
+
+const List info_types = [
+  "Doctors",
+  "Fever Clinics",
+  "Government Contacts",
+  "Helplines",
+  "Hospital",
+  "Laboratories",
+  "Quarantine Facilities"
 ];
