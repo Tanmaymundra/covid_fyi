@@ -1,4 +1,3 @@
-import 'package:covidfyi/utilities/launch_services.dart';
 import 'package:covidfyi/widgets/round_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +7,16 @@ class helpline_card extends StatelessWidget {
   final String Area;
   final String number;
   final String email;
-  final String Source;
+  final String sourcelink;
 
   helpline_card(
-      {this.email, this.Area, this.info_type, this.number, this.Source});
+      {this.email, this.Area, this.info_type, this.number, this.sourcelink});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-      height: 170,
+      height: 180,
       width: double.maxFinite,
       child: Card(
         elevation: 5,
@@ -53,15 +52,14 @@ class helpline_card extends StatelessWidget {
                             children: <Widget>[
                               Icon(Icons.location_on),
                               SizedBox(
-                                width: 10,
+                                width: 5,
                               ),
                               Text(
-                                'Area',
-                                style: TextStyle(fontSize: 18),
+                                Area,
+                                style: TextStyle(fontSize: 15),
                               ),
                             ],
                           ),
-
                           SizedBox(
                             width: 20,
                             height: 40,
@@ -69,11 +67,11 @@ class helpline_card extends StatelessWidget {
                           Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: <Widget>[
-                              Text(number),
+                              Text(email == null ? '' : email),
                               SizedBox(
                                 height: 5,
                               ),
-                              Text(email),
+                              Text(number == null ? '' : number),
                             ],
                           ),
                         ],
@@ -89,15 +87,18 @@ class helpline_card extends StatelessWidget {
                           round_btn(
                             btn_text: 'Call',
                             iconName: Icons.phone,
-                           // btnpress: ,
+                            data: number,
+                            // btnpress: ,
                           ),
                           round_btn(
                             btn_text: 'Email',
                             iconName: Icons.email,
+                            data: email,
                           ),
                           round_btn(
                             btn_text: 'Source',
                             iconName: Icons.link,
+                            data: sourcelink,
                           )
                         ],
                       ),

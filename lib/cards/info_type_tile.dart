@@ -7,8 +7,12 @@ class info_type_tile extends StatelessWidget {
   final String NoContacts;
   final String stateName;
 
-  info_type_tile(
-      {this.infotype, this.iconname, this.NoContacts, this.stateName});
+  info_type_tile({
+    this.infotype,
+    this.iconname,
+    this.NoContacts,
+    this.stateName,
+  });
 
   Widget build(BuildContext context) {
     return ListTile(
@@ -40,8 +44,11 @@ class info_type_tile extends StatelessWidget {
         ),
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) =>
-                ThirdScreen(stateName: stateName, infotype: infotype),
+            builder: (context) => ThirdScreen(
+              stateName: stateName,
+              infotype: infotype,
+              Noiteration: NoContacts,
+            ),
           ));
         });
   }

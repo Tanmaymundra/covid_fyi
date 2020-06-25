@@ -1,13 +1,28 @@
+import 'package:covidfyi/utilities/launch_services.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class round_btn extends StatelessWidget {
   final String btn_text;
-  final Function btnpress;
   final IconData iconName;
-  final Color inactive;
+  final String data;
+  static Color inactivebtn = Colors.black12;
+  static Color activebtn = Colors.blueGrey;
 
-  round_btn({this.btn_text, this.btnpress, this.iconName, this.inactive});
+  round_btn({
+    this.btn_text,
+    this.iconName,
+    this.data,
+  });
+
+  void onPressed(String btn_text) {
+    if (btn_text == 'Call') {
+      launching().call(data);
+    } else if (btn_text == 'Email') {
+      launching().sendEmail(data);
+    } else {
+      launching().openurl(data);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +30,17 @@ class round_btn extends StatelessWidget {
       width: 80,
       height: 35.0,
       child: GestureDetector(
-        onTap: btnpress,
+        onTap: () {
+          if (!((data == '') | (data == null))) {
+            onPressed(btn_text);
+          }
+        },
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(
-              color: Colors.blueGrey,
+              color: ((data == '') | (data == null)) ? inactivebtn : activebtn,
               style: BorderStyle.solid,
-              width: 1.0,
+              width: 2.0,
             ),
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(30.0),
@@ -37,7 +56,7 @@ class round_btn extends StatelessWidget {
                 width: 5,
               ),
               Text(
-                (btn_text == null) ? 'Hello' : btn_text,
+                btn_text,
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'Montserrat',

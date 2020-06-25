@@ -24,6 +24,7 @@ class _SecondScreenState extends State<SecondScreen> {
     final url = state_data_api + widget.stateName + '/' + infotype;
     NetworkHelper networkHelper = NetworkHelper(url);
     var data = await networkHelper.getData();
+
     _List_contacts['$infotype'] = data['results'].length.toString();
 
     if (data['results'].length == 0) {
@@ -47,9 +48,9 @@ class _SecondScreenState extends State<SecondScreen> {
     for (var i = 0; i < info_types.length; i++) {
       bool valid = await infotypevalid(info_types[i]);
       if (valid) {
-        // setState(() {
-        _valid_infotype.add(info_types[i]);
-        //});
+        setState(() {
+          _valid_infotype.add(info_types[i]);
+        });
       }
     }
     setState(() {
@@ -76,6 +77,7 @@ class _SecondScreenState extends State<SecondScreen> {
             itemCount: _valid_infotype.length,
             itemBuilder: (BuildContext context, index) {
               var indexName = _valid_infotype[index];
+
               return info_type_tile(
                 iconname: getIcon(indexName),
                 infotype: indexName,
