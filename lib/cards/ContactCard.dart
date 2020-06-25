@@ -20,7 +20,7 @@ class Contact_card extends StatelessWidget {
       height: 180,
       width: double.maxFinite,
       child: Card(
-        elevation: 5,
+        elevation: 20,
         child: Padding(
           padding: EdgeInsets.all(7),
           child: Stack(

@@ -1,13 +1,15 @@
-import 'package:covidfyi/cards/helpline.dart';
-import 'package:covidfyi/json_extract/helpline_json.dart';
+import 'package:covidfyi/cards/ContactCard.dart';
 import 'package:covidfyi/utilities/Network.dart';
 import 'package:covidfyi/utilities/const_url.dart';
+import 'package:covidfyi/utilities/json_decode.dart';
 import 'package:covidfyi/widgets/BottomNavigator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class ThirdScreen extends StatefulWidget {
+  static const String id = '/thirdscreen';
+
   final String stateName;
   final String infotype;
   final String noiteration;
@@ -54,6 +56,20 @@ class _ThirdScreenState extends State<ThirdScreen> {
     });
   }
 
+  String checkData(helpline) {
+    String infotype;
+    if (helpline.description == "") {
+      if (helpline.name == "") {
+        infotype = widget.infotype;
+      } else {
+        infotype = helpline.name;
+      }
+    } else {
+      infotype = helpline.description;
+    }
+    return infotype;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +93,9 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 //print(snapshot.data.length);
                 //print(helpline.description);
                 //print(helpline.area);
+
                 return Contact_card(
-                  infotype: (helpline.description == "")
-                      ? helpline.name
-                      : helpline.description,
+                  infotype: checkData(helpline),
                   area: helpline.area,
                   number: helpline.phone1,
                   email: helpline.email1,

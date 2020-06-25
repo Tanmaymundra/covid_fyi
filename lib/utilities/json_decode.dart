@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final helpline = helplineFromJson(jsonString);
-
 import 'dart:convert';
 
 // ignore: camel_case_types

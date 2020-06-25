@@ -1,6 +1,11 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 const String State_list_api = "https://api.covidfyi.in/v1/states";
 const String state_data_api = "https://api.covidfyi.in/v1/state/";
 
+const kPrimaryColor = Color.fromRGBO(35, 66, 86, 1);
+const Color bgcolour = Colors.white12;
 const List StateList = [
   "Andaman and Nicobar",
   "Andhra Pradesh",
