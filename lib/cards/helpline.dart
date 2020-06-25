@@ -2,15 +2,16 @@ import 'package:covidfyi/widgets/round_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class helpline_card extends StatelessWidget {
-  final String info_type;
-  final String Area;
+// ignore: camel_case_types
+class Contact_card extends StatelessWidget {
+  final String infotype;
+  final String area;
   final String number;
   final String email;
   final String sourcelink;
 
-  helpline_card(
-      {this.email, this.Area, this.info_type, this.number, this.sourcelink});
+  Contact_card(
+      {this.email, this.area, this.infotype, this.number, this.sourcelink});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class helpline_card extends StatelessWidget {
                     children: <Widget>[
                       Flexible(
                         child: Text(
-                          info_type,
+                          infotype,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
@@ -55,7 +56,7 @@ class helpline_card extends StatelessWidget {
                                 width: 5,
                               ),
                               Text(
-                                Area,
+                                area,
                                 style: TextStyle(fontSize: 15),
                               ),
                             ],
@@ -84,19 +85,19 @@ class helpline_card extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          round_btn(
-                            btn_text: 'Call',
+                          Roundbtn(
+                            btntext: 'Call',
                             iconName: Icons.phone,
                             data: number,
                             // btnpress: ,
                           ),
-                          round_btn(
-                            btn_text: 'Email',
+                          Roundbtn(
+                            btntext: 'Email',
                             iconName: Icons.email,
                             data: email,
                           ),
-                          round_btn(
-                            btn_text: 'Source',
+                          Roundbtn(
+                            btntext: 'Source',
                             iconName: Icons.link,
                             data: sourcelink,
                           )

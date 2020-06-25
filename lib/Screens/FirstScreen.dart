@@ -15,11 +15,11 @@ class FirstScreen extends StatelessWidget {
           centerTitle: true,
           automaticallyImplyLeading: false,
         ),
-        bottomNavigationBar: makeBottom(),
+        bottomNavigationBar: Makebottom(),
         body: ListView.builder(
           itemCount: StateList.length,
           itemBuilder: (BuildContext context, index) {
-            return state_tile(
+            return State_tile(
               stateName: StateList[index],
             );
           },

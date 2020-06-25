@@ -57,8 +57,8 @@ class _SecondScreenState extends State<SecondScreen> {
       _spinner = false;
     });
 
-    print(_valid_infotype);
-    print(_List_contacts);
+    //(_valid_infotype);
+    //print(_List_contacts);
   }
 
   @override
@@ -69,7 +69,7 @@ class _SecondScreenState extends State<SecondScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      bottomNavigationBar: makeBottom(),
+      bottomNavigationBar: Makebottom(),
       body: ModalProgressHUD(
         inAsyncCall: _spinner,
         opacity: 0,
@@ -78,10 +78,10 @@ class _SecondScreenState extends State<SecondScreen> {
             itemBuilder: (BuildContext context, index) {
               var indexName = _valid_infotype[index];
 
-              return info_type_tile(
+              return Info_type_tile(
                 iconname: getIcon(indexName),
                 infotype: indexName,
-                NoContacts: _List_contacts[indexName],
+                nocontacts: _List_contacts[indexName],
                 stateName: widget.stateName,
               );
             }),

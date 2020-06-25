@@ -10,9 +10,9 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 class ThirdScreen extends StatefulWidget {
   final String stateName;
   final String infotype;
-  final String Noiteration;
+  final String noiteration;
 
-  ThirdScreen({this.stateName, this.infotype, this.Noiteration});
+  ThirdScreen({this.stateName, this.infotype, this.noiteration});
 
   @override
   _ThirdScreenState createState() => _ThirdScreenState();
@@ -23,33 +23,25 @@ class _ThirdScreenState extends State<ThirdScreen> {
   int counter;
 
   Future<List<Helpline>> getData() async {
-    List<Helpline> return_list = [];
+    List<Helpline> returnList = [];
     final String url =
         state_data_api + widget.stateName + '/' + widget.infotype;
     NetworkHelper networkHelper = NetworkHelper(url);
 
-    var Urldata = await networkHelper.getData();
-    var Urldata_extracted = Urldata['results'] as List;
-    counter = Urldata_extracted.length;
+    var urldata = await networkHelper.getData();
+    var urldataExtracted = urldata['results'] as List;
+    counter = urldataExtracted.length;
 
-    //setState(() {
-    //print('Url Data $Urldata');
-    //print('Extracted ->  $Urldata_extracted');
-    //_helpline_list = helplineFromJson(Urldata_extracted);
-    //_spinner = false;
-    // });
-    return_list =
-        Urldata_extracted.map<Helpline>((json) => Helpline.fromJson(json))
-            .toList();
+    returnList = urldataExtracted
+        .map<Helpline>((json) => Helpline.fromJson(json))
+        .toList();
 
-    print("List Size: ${return_list.length}");
+    //print("List Size: ${returnList.length}");
     setState(() {
       _spinner = false;
     });
 
-    return return_list;
-
-    //return result_list;
+    return returnList;
   }
 
   @override
@@ -70,7 +62,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      bottomNavigationBar: makeBottom(),
+      bottomNavigationBar: Makebottom(),
       body: ModalProgressHUD(
         inAsyncCall: _spinner,
         opacity: 0,
@@ -85,11 +77,11 @@ class _ThirdScreenState extends State<ThirdScreen> {
                 //print(snapshot.data.length);
                 //print(helpline.description);
                 //print(helpline.area);
-                return helpline_card(
-                  info_type: (helpline.description == "")
+                return Contact_card(
+                  infotype: (helpline.description == "")
                       ? helpline.name
                       : helpline.description,
-                  Area: helpline.area,
+                  area: helpline.area,
                   number: helpline.phone1,
                   email: helpline.email1,
                   sourcelink: helpline.sourceurl,

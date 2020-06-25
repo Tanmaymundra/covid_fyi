@@ -1,16 +1,17 @@
 import 'package:covidfyi/Screens/ThirdScreen.dart';
 import 'package:flutter/material.dart';
 
-class info_type_tile extends StatelessWidget {
+// ignore: camel_case_types
+class Info_type_tile extends StatelessWidget {
   final String infotype;
   final IconData iconname;
-  final String NoContacts;
+  final String nocontacts;
   final String stateName;
 
-  info_type_tile({
+  Info_type_tile({
     this.infotype,
     this.iconname,
-    this.NoContacts,
+    this.nocontacts,
     this.stateName,
   });
 
@@ -32,7 +33,7 @@ class info_type_tile extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         subtitle: Text(
-          "$NoContacts Contacts",
+          "$nocontacts Contacts",
           style: TextStyle(
             color: Colors.white,
           ),
@@ -47,7 +48,7 @@ class info_type_tile extends StatelessWidget {
             builder: (context) => ThirdScreen(
               stateName: stateName,
               infotype: infotype,
-              Noiteration: NoContacts,
+              noiteration: nocontacts,
             ),
           ));
         });

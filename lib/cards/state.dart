@@ -3,9 +3,11 @@ import 'package:covidfyi/utilities/Network.dart';
 import 'package:covidfyi/utilities/const_url.dart';
 import 'package:flutter/material.dart';
 
-class state_tile extends StatelessWidget {
+// ignore: camel_case_types
+class State_tile extends StatelessWidget {
   final String stateName;
-  state_tile({this.stateName});
+
+  State_tile({this.stateName});
   @override
   Widget build(BuildContext context) {
     return ListTile(

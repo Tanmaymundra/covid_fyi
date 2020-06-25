@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 
+// ignore: camel_case_types
 class Helpline_list {
   final List<Helpline> helpline;
 
