@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         primaryColor: kPrimaryColor,
       ),
-      home: FirstScreen(),
-      initialRoute: WelcomeScreen.id,
+      home: WelcomeScreen(),
+      initialRoute: FirstScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         FirstScreen.id: (context) => FirstScreen(),

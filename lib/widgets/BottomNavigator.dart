@@ -8,7 +8,7 @@ class Makebottom extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, FirstScreen.id);
+        Navigator.pop(context);
       },
       child: Container(
         decoration: BoxDecoration(
