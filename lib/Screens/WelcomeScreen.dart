@@ -5,7 +5,6 @@ import 'package:covidfyi/utilities/const_url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/avd.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = '/welcome';
@@ -19,8 +18,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5),
-        () => Navigator.pushNamed(context, FirstScreen.id));
+
+    Future.delayed(
+      Duration(seconds: 5),
+      () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => FirstScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -41,7 +50,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: Center(
                   child: SvgPicture.asset(
                     'images/logo.svg',
-                    //color: Colors.white,
+                    // color: Colors.white,
+                    // matchTextDirection: true
                   ),
                 ),
               ),
