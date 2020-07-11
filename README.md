@@ -6,26 +6,23 @@ Application for CovidFYI.in
 
 The data is provided by the covidfyi.in Restapi
 
-#Screenshots:
+# Screenshots:
 
-###Starting Screen / Splash Screen
+### Starting Screen / Splash Screen
 
-<img src="assets/Screen1.png" height="300px" />
-
+<img src="assets/Screen1.png" height="500px />
 
 ### States List
 
-
-![State List](../master/assets/Screen2.png)
+<img src="assets/Screen2.png" height="500px />
 
 ### Info-types of the States
 
-![Info Types](../master/assets/Screen3.png)
-
+<img src="assets/Screen3.png" height="500px />
 
 ### Contact Card
 
-![Contact Cards](../master/assets/Screen4.png)
+<img src="assets/Screen4.png" height="500px />
 
 
 Only the data available get a blue coloured bordering indicating the data is available
