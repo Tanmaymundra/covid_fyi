@@ -4,13 +4,38 @@ Application for CovidFYI.in
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The data is provided by the covidfyi.in Restapi
 
-A few resources to get you started if this is your first Flutter project:
+#Screenshots:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+###Starting Screen / Splash Screen
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Splash Screen](../master/assets/Screen1.png)
+
+### States List
+
+![State List](../master/assets/Screen2.png)
+
+### Info-types of the States
+
+![Info Types](../master/assets/Screen3.png)
+
+
+### Contact Card
+
+![Contact Cards](../master/assets/Screen4.png)
+
+
+Only the data available get a blue coloured bordering indicating the data is available
+
+
+
+# Get packages for all flutter projects
+
+- Once you have cloned this repo, navigate to the root of this repo.
+- Next run `flutter pub get`
+- After getting all the packages run `flutter run`
+- Done!
+
+
+
