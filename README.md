@@ -1,6 +1,6 @@
 # covidfyi
 
-Application for CovidFYI.in
+Application for [CovidFYI.in](https://covidfyi.in/)
 
 ## Getting Started
 
