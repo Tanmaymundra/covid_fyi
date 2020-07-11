@@ -10,9 +10,11 @@ The data is provided by the covidfyi.in Restapi
 
 ###Starting Screen / Splash Screen
 
-![Splash Screen](../master/assets/Screen1.png)
+<img src="assets/Screen1.png" height="300px" />
+
 
 ### States List
+
 
 ![State List](../master/assets/Screen2.png)
 
